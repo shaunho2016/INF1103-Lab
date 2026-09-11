@@ -8,6 +8,20 @@ while True:
     if stock.lower() == "quit":
         break
 
+    # Check if integer
+    if not stock.isdigit():
+        print("Error: Invalid input. Please enter a number.")
+        failed_entries += 1
+        continue
+
+    stock = int(stock)
+
+    # Reject negative number
+    if stock < 0:
+        print("Error: Negative stock values are not allowed.")
+        failed_entries += 1
+        continue
+
     # Add valid stock to inventory
     inventory += stock
 
