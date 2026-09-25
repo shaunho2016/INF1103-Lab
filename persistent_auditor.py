@@ -25,3 +25,21 @@ def create_order(order_id):
         return f"{order_id},{product_name},{quantity}"
     else:
         print("invalid input")
+
+def save_inventory(order):
+    with open('inventory.txt','a') as file:
+        file.writelines((order+'\n'))
+    
+inventory = load_inventory()
+display_inventory(inventory)
+
+while True: 
+    id = create_order_id(inventory)
+    new_order = create_order(id)
+    if new_order == "quit":
+        display_inventory(inventory)
+        break
+    inventory.append(new_order)
+    print(f'New Order added:\n {new_order}')
+    save_inventory(new_order)
+    print('Order successfully saved to inventory.txt')
