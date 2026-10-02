@@ -33,7 +33,26 @@ def save_inventory(order):
         json.dump(order,file,indent = 4)
     print('File Saved Successfully')
 
+def search_product(inventory,order_id):
+    if inventory == {}:
+        print("Inventory is empty")
+    else:
+        for item in inventory:
+            if item['order_id'] == int(order_id):
+                print('Product found:\nName:',item['product_name'])
+                print('Price:',item['price'])
+                print('Current Stock:',item['quantity'])
 
+def update_stock(inventory,order_id):
+    if inventory == {}:
+        print("Inventory is Empty")
+    else:
+        for item in inventory:
+            if item['order_id'] == int(order_id):
+                print(f"Product found\nName: {item['product_name']}\nCurrent Stock: {item['quantity']}")
+                newstock = input('New Stock Quantity: ')
+                item['quantity'] = newstock
+                print('Stock has been updated')
 
 
 menu = ('---MENU---\n1.Display Product\n2.Add Product\n3.Update Stock\n4.Search Product\n5.Save Inventory\n6.Quit')
