@@ -28,6 +28,13 @@ def add_product(order_id):
     else:
         print("invalid input")
 
+def save_inventory(order):
+    with open('inventory.json','w') as file:
+        json.dump(order,file,indent = 4)
+    print('File Saved Successfully')
+
+
+
 
 menu = ('---MENU---\n1.Display Product\n2.Add Product\n3.Update Stock\n4.Search Product\n5.Save Inventory\n6.Quit')
 inventory = load_inventory()
