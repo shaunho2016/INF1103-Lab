@@ -1,0 +1,14 @@
+[
+    {
+        "_Product__product_id": "P001",
+        "_Product__name": "HAT",
+        "_Product__price": "3.2",
+        "_Product__stock": "3"
+    },
+    {
+        "_Product__product_id": "P002",
+        "_Product__name": "TOY",
+        "_Product__price": "2.2",
+        "_Product__stock": "111"
+    }
+]

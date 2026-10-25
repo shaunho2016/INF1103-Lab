@@ -19,6 +19,9 @@ class Product:
 class Inventory:
     def __init__(self):
         self.storage = []
+
+    def get_inventory(self):
+        return self.storage
     
     def add_product(self,newproduct):
         self.storage.append(newproduct)
@@ -31,10 +34,10 @@ class Inventory:
             
         print('Product not found')
 
-    def update_product(self,query):
+    def update_product(self,query,newstock):
         for item in self.storage:
             if item.getproductid() == query:
-                item.update_stock(query)
+                item.update_stock(newstock)
                 return
             
         print('Product not found')
@@ -44,3 +47,41 @@ class Inventory:
             print('Inventory is empty')
         for item in self.storage:
             item.display_information()
+
+def save_inventory(inventory):
+    invitems = [vars(item) for item in inventory.get_inventory()]
+    with open('oop_inventory.json','w') as file:
+        json.dump(invitems,file,indent = 4)
+    print('File Saved Successfully')
+
+inventory = Inventory()
+menu = ('---MENU---\n1.Display Product\n2.Add Product\n3.Update Stock\n4.Search Product\n5.Save Inventory\n6.Quit')
+print(menu)
+
+while True: 
+    input_option = int(input('Enter Option: ').strip())
+
+    if input_option == 1:
+        inventory.display_all()
+    elif input_option == 2:
+        addid = input('Enter Product ID: ')
+        addname = input('Enter Product Name: ')
+        addprice = input('Enter Price: ')
+        addstock = input('Enter Stock: ')
+        newitem = Product(addid,addname,addprice,addstock) 
+        inventory.add_product(newitem)
+    elif input_option == 3:
+        updateitem = input('Enter Product ID: ')
+        newquantity = input('Enter New Stock: ')
+        inventory.update_product(updateitem,newquantity)
+    elif input_option == 4:
+        searchitem = input('Enter Product ID: ')
+        inventory.search_product(searchitem)
+    elif input_option == 5: 
+        save_inventory(inventory)
+    elif input_option == 6:
+        save_inventory(inventory)
+        print('Thank you for using the Inventory Management System')
+        break
+    else: 
+        print('Input a number from 1-6')
