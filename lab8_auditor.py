@@ -16,6 +16,14 @@ class Product:
     def display_information(self):
         print(f'Product ID: {self.__product_id}\nName: {self.__name}\nPrice: {self.__price}\nStock: {self.__stock}\n')
 
+    def to_dict(self):
+        return {
+            "product_id": self.__product_id,
+            "name": self.__name,
+            "price": self.__price,
+            "stock": self.__stock
+        }
+
 class Inventory:
     def __init__(self):
         self.storage = []
@@ -48,13 +56,32 @@ class Inventory:
         for item in self.storage:
             item.display_information()
 
+def load_inventory(inventory):
+    try:
+        with open('oop_inventory.json', 'r') as file:
+            invitems = json.load(file)
+
+        for item in invitems:
+            product = Product(
+                item['product_id'],
+                item['name'],
+                item['price'],
+                item['stock']
+            )
+            inventory.add_product(product)
+        print("Inventory Loaded Successfully")
+
+    except:
+        print("Inventory file not found. Starting with empty inventory.")
+
 def save_inventory(inventory):
-    invitems = [vars(item) for item in inventory.get_inventory()]
+    invitems = [item.to_dict() for item in inventory.get_inventory()]
     with open('oop_inventory.json','w') as file:
         json.dump(invitems,file,indent = 4)
     print('File Saved Successfully')
 
 inventory = Inventory()
+load_inventory(inventory)
 menu = ('---MENU---\n1.Display Product\n2.Add Product\n3.Update Stock\n4.Search Product\n5.Save Inventory\n6.Quit')
 print(menu)
 

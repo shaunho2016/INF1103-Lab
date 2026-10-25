@@ -1,14 +1,14 @@
 [
     {
-        "_Product__product_id": "P001",
-        "_Product__name": "HAT",
-        "_Product__price": "3.2",
-        "_Product__stock": "3"
+        "product_id": "P001",
+        "name": "TABLE",
+        "price": "2.3",
+        "stock": "22"
     },
     {
-        "_Product__product_id": "P002",
-        "_Product__name": "TOY",
-        "_Product__price": "2.2",
-        "_Product__stock": "111"
+        "product_id": "P002",
+        "name": "FENCE",
+        "price": "33",
+        "stock": "10"
     }
 ]
