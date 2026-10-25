@@ -6,17 +6,18 @@ def load_inventory():
             history = json.load(file)
             return history
     except:
-        return {}
+        return []
     
 def display_inventory(history):
     print(f'Order list: {history}')
 
 def create_order_id(orders):
-    if len(orders) == 0:
+    if orders == []:
         return 1001
-    last_order = orders[-1]
-    last_id = last_order['order_id']
-    return last_id + 1
+    else:
+        last_order = orders[-1]
+        last_id = last_order['order_id']
+        return last_id + 1
 
 def add_product(order_id):
     product_name = input("Enter Product Name: ")
