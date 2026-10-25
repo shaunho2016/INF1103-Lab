@@ -22,6 +22,22 @@ class Inventory:
     
     def add_product(self,newproduct):
         self.storage.append(newproduct)
+
+    def search_product(self,query):
+        for item in self.storage:
+            if item.getproductid() == query:
+                item.display_information()
+                return
+            
+        print('Product not found')
+
+    def update_product(self,query):
+        for item in self.storage:
+            if item.getproductid() == query:
+                item.update_stock(query)
+                return
+            
+        print('Product not found')
     
     def display_all(self):
         if len(self.storage) == 0:
