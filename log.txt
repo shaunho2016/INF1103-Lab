@@ -1,3 +1,45 @@
+commit b78d951a992d68c913e8c1b225a0a87ce41d658c
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Oct 30 21:16:51 2026 +0800
+
+    Created gitignore file and tested if code matches requirements
+
+commit 93fec1e670bcc04b689ae96f8eec101c43f3569b
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Oct 30 20:52:40 2026 +0800
+
+    Changed save inventory into respective child classes, implemented type of product when saving
+
+commit c5e9b74e7d16353ed4be6f79915f6720e9fa42fd
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Oct 30 20:51:58 2026 +0800
+
+    Changed add product into respective child class
+
+commit 2d05d94e5af847035dc8fa135d491e6c08a848ec
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Oct 30 11:29:45 2026 +0800
+
+    Created abstract class Can be Shipped and implemented it for class Physical Product
+
+commit 15d2ac05489349129f995b10552d8c65e723ca91
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Oct 30 10:53:29 2026 +0800
+
+    Implemented Product class as a abstract class
+
+commit 72a956d4db82b319eae045f0f6e902389fd92a10
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Oct 30 10:52:12 2026 +0800
+
+    Created child class Digital Product
+
+commit 5d05a75be58b36323c7ba826da30b5bd60c5fb5a
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Oct 30 10:51:27 2026 +0800
+
+    Created child class Physical Product
+
 commit 16d2ea1b24e2233d0163c7c42ec9d04a405e5dd1
 Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
 Date:   Sun Oct 25 17:06:52 2026 +0800

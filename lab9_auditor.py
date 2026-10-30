@@ -47,6 +47,9 @@ class PhysicalProduct(Product,CanBeShipped):
         shippingCost = self.__weight*0.1
         print(f'Shipping cost is ${shippingCost:.2f}')
 
+    def get_fulfilment_info(self):
+        print('Product requires physical shipping')
+
     def to_dict(self):
         senddict = super().to_dict()
         senddict['Type'] = 'physical'
@@ -61,6 +64,9 @@ class DigitalProduct(Product):
     def display_information(self):
         super().display_information()
         print(f'Download Size: {self.__download_size}\n')
+
+    def get_fulfilment_info(self):
+        print('Product is delivered digitally')
 
     def to_dict(self):
         senddict = super().to_dict()
