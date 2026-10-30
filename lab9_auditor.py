@@ -1,8 +1,8 @@
 import json
+from abc import ABC, abstractmethod
 
-
-class Product():
-
+class Product(ABC):
+    @abstractmethod
     def __init__(self,productid,name,price,stock):
         self.__product_id = productid
         self.__name = name
@@ -26,7 +26,8 @@ class Product():
             "stock": self.__stock
         }
     
-
+    def get_fulfilment_info(self):
+        pass
 
 class PhysicalProduct(Product):
     def __init__(self,productid,name,price,stock,weight):
