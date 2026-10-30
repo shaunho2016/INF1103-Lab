@@ -86,7 +86,7 @@ menu = ('---MENU---\n1.Display Product\n2.Add Product\n3.Update Stock\n4.Search 
 print(menu)
 
 while True: 
-    input_option = int(input('Enter Option: ').strip())
+    input_option = int(input('Enter Option: '))
 
     if input_option == 1:
         inventory.display_all()

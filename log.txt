@@ -1,0 +1,101 @@
+commit 16d2ea1b24e2233d0163c7c42ec9d04a405e5dd1
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Sun Oct 25 17:06:52 2026 +0800
+
+    Implemented load inventory and tested all menu functions
+
+commit 45d15148a5cd50ff6a738b838e6ab5214d15b621
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Sun Oct 25 16:51:26 2026 +0800
+
+    Created Menu and file saving
+
+commit 8dce619747efba5835cfcba46e67b4ad8dea13d1
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Sun Oct 25 16:35:03 2026 +0800
+
+    Added search and update functions into the inventory class
+
+commit aec2edcec8a6b2c485cc93632e5c0e323c4a0b6b
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Sun Oct 25 16:34:34 2026 +0800
+
+    Created Inventory Class with display and add functions
+
+commit 5ab45d1aa598980717e6123544e85895ec33302e
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Sun Oct 25 16:33:11 2026 +0800
+
+    Created Product Class
+
+commit a1fe28c700739c417f99a798fcfea02aefc1f567
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Oct 2 15:25:42 2026 +0800
+
+    implemented update quantity
+
+commit 0c3c9931c6960cae1e27ac69b074ef30fd11e038
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Oct 2 15:24:42 2026 +0800
+
+    implemented save inventory
+
+commit 28fdc6b81eb6d3508f8f05ce639654946e8b8030
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Oct 2 15:24:14 2026 +0800
+
+    Implemented add product
+
+commit 32a45831a772cdc6744d2aaf82d7ed2f68940c52
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Oct 2 15:23:13 2026 +0800
+
+    Tested load inventory function works
+
+commit 200513fd5088143cf967baf6ccb20a46eed899b8
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Sep 25 12:04:30 2026 +0800
+
+    Created save inventory and loop to write orders to file
+
+commit e7564d3f3e0156d2de0d03b56bf42124ebcc0822
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Sep 25 12:03:50 2026 +0800
+
+    create functions on id and order input
+
+commit e69f3f44cfc2515d5fafa643ac4ba55e045161a0
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Sat Sep 19 16:23:05 2026 +0800
+
+    Made inventory and failed entries global var and created loop for report
+
+commit 4bff5c54a5ad80d3c7e0e9a423155db157dc9dbe
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Sat Sep 19 15:52:24 2026 +0800
+
+    Added required functions in new modular auditor file
+
+commit 3b2590b201ecefb6055e78e040b9bf4703469db7
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 15:31:59 2026 +0800
+
+    Added Dockerfile
+
+commit fa736e540b2df5d985557b72624bbfe763c26b2a
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 10:45:22 2026 +0800
+
+    added check for negative stock and check for valid input
+
+commit c9ede710a37614804e925bbae5bd11daf3314301
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 10:44:38 2026 +0800
+
+    Created loop and overstock warning
+
+commit 50e3bb44c76874f72fdd4ce03dfe36dad2ec3b55
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 10:26:13 2026 +0800
+
+    First Commit

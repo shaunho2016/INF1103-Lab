@@ -10,5 +10,11 @@
         "name": "FENCE",
         "price": "33",
         "stock": "10"
+    },
+    {
+        "product_id": "P003",
+        "name": "CHAIR",
+        "price": "44.2",
+        "stock": "8"
     }
 ]
