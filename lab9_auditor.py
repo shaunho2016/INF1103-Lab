@@ -16,7 +16,7 @@ class Product(ABC):
         self.__stock = newstock
 
     def display_information(self):
-        print(f'Product ID: {self.__product_id}\nName: {self.__name}\nPrice: {self.__price}\nStock: {self.__stock}\n')
+        print(f'Product ID: {self.__product_id}\nName: {self.__name}\nPrice: {self.__price}\nStock: {self.__stock}')
 
     def to_dict(self):
         return {
@@ -40,12 +40,18 @@ class PhysicalProduct(Product,CanBeShipped):
         self.__weight = weight
 
     def display_information(self):
-        super().display_information(())
+        super().display_information()
         print(f'Weight: {self.__weight}\n')
 
     def calculate_shipping_cost(self):
         shippingCost = self.__weight*0.1
         print(f'Shipping cost is ${shippingCost:.2f}')
+
+    def to_dict(self):
+        senddict = super().to_dict()
+        senddict['Type'] = 'physical'
+        senddict['Weight'] = self.__weight
+        return senddict
 
 class DigitalProduct(Product):
     def __init__(self,productid,name,price,stock,download_size):
@@ -56,6 +62,11 @@ class DigitalProduct(Product):
         super().display_information()
         print(f'Download Size: {self.__download_size}\n')
 
+    def to_dict(self):
+        senddict = super().to_dict()
+        senddict['Type'] = 'digital'
+        senddict['Download Size'] = self.__download_size
+        return senddict
 
 class Inventory:
     def __init__(self):
@@ -95,13 +106,15 @@ def load_inventory(inventory):
             invitems = json.load(file)
 
         for item in invitems:
-            product = Product(
-                item['product_id'],
-                item['name'],
-                item['price'],
-                item['stock']
-            )
-            inventory.add_product(product)
+            if item['Type'] == 'physical':
+                product = PhysicalProduct(
+                    item['product_id'],
+                    item['name'],
+                    item['price'],
+                    item['stock'],
+                    item['Weight']
+                )
+
         print("Inventory Loaded Successfully")
 
     except:
@@ -128,8 +141,18 @@ while True:
         addname = input('Enter Product Name: ')
         addprice = input('Enter Price: ')
         addstock = input('Enter Stock: ')
-        newitem = Product(addid,addname,addprice,addstock) 
+        producttype = input('Enter Digital or Physical: ').lower()
+        if producttype == 'digital':
+            addsize = input('Enter Download Size: ')
+            newitem = DigitalProduct(addid,addname,addprice,addstock,addsize)
+        elif producttype == 'physical':
+            addweight = input('Enter Weight: ')
+            newitem = PhysicalProduct(addid,addname,addprice,addstock,addweight)
+        else:
+            print('Enter Valid Product Type')
+            continue
         inventory.add_product(newitem)
+        print('Product successfully added')
     elif input_option == 3:
         updateitem = input('Enter Product ID: ')
         newquantity = input('Enter New Stock: ')
