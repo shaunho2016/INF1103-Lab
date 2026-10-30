@@ -37,6 +37,15 @@ class PhysicalProduct(Product):
         super().display_information(())
         print(f'Weight: {self.__weight}\n')
 
+class DigitalProduct(Product):
+    def __init__(self,productid,name,price,stock,download_size):
+        super().__init__(productid,name,price,stock)
+        self.__download_size = download_size
+
+    def display_information(self):
+        super().display_information()
+        print(f'Download Size: {self.__download_size}\n')
+
 
 class Inventory:
     def __init__(self):
