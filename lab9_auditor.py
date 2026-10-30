@@ -115,6 +115,20 @@ def load_inventory(inventory):
                     item['Weight']
                 )
 
+            elif item['Type'] == 'digital':
+                product = DigitalProduct(
+                    item['product_id'],
+                    item['name'],
+                    item['price'],
+                    item['stock'],
+                    item['Download Size']
+                )
+
+            else:
+                print('Unknown product type. Skipping product.')
+                continue
+            inventory.add_product(product)
+
         print("Inventory Loaded Successfully")
 
     except:
