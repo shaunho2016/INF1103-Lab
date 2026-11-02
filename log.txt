@@ -1,3 +1,9 @@
+commit 7fe1f1853832f2d1555a4b1828e4171728fa336c
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Oct 30 21:26:13 2026 +0800
+
+    Updated get fufilment info for child classes
+
 commit b78d951a992d68c913e8c1b225a0a87ce41d658c
 Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
 Date:   Fri Oct 30 21:16:51 2026 +0800
