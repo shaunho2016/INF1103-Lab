@@ -2,6 +2,7 @@ import json
 from digitalproduct import DigitalProduct
 from physicalproduct import PhysicalProduct
 from inventory import Inventory
+from supplier import Supplier
 
 def load_inventory(inventory):
     try:
