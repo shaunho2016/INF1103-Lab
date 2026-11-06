@@ -77,7 +77,7 @@ while True:
         inventory.update_product(updateitem,newquantity)
     elif input_option == 4:
         searchitem = input('Enter Product ID: ')
-        inventory.search_product(searchitem)
+        find = inventory.search_product(searchitem)
     elif input_option == 5: 
         save_inventory(inventory)
     elif input_option == 6:
