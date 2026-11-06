@@ -13,6 +13,9 @@ class Product(ABC):
     def getproductid(self):
         return self.__product_id
 
+    def getprice(self):
+        return self.__price
+
     def update_stock(self, newstock):
         self.__stock = newstock
 
