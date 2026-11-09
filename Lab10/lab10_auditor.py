@@ -2,6 +2,7 @@ import json
 from digitalproduct import DigitalProduct
 from physicalproduct import PhysicalProduct
 from inventory import Inventory
+from product import Product
 from orderline import OrderLine
 from order import Order
 
@@ -44,6 +45,10 @@ def save_inventory(inventory):
     with open('oop_inventory.json','w') as file:
         json.dump(invitems,file,indent = 4)
     print('File Saved Successfully')
+
+def show_product_details(product: Product) -> None:
+    product.display_information()
+    product.get_fulfilment_info()
 
 inventory = Inventory()
 load_inventory(inventory)

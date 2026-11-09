@@ -16,7 +16,7 @@ class Product(ABC):
     def getprice(self):
         return self.__price
 
-    def update_stock(self, newstock):
+    def update_stock(self, newstock: int):
         self.__stock = newstock
 
     def display_information(self):

@@ -32,7 +32,7 @@ class Inventory:
             
         print('Product not found')
     
-    def display_all(self):
+    def display_all(self) -> None:
         if len(self.storage) == 0:
             print('Inventory is empty')
         for item in self.storage:
