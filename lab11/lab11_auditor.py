@@ -6,6 +6,57 @@ from product import Product
 from orderline import OrderLine
 from order import Order
 from productfactory import ProductFactory
+from supplier import Supplier
+import csv
+
+
+import csv
+
+def load_products(path: str, inventory: Inventory, supplier: Supplier) -> None:
+    try:
+        file = open(path, newline="", encoding="utf-8")
+
+    except FileNotFoundError:
+        print(f"Products file not found: {path}")
+
+    else:
+        loaded = 0
+
+        with file:
+            reader = csv.reader(file)
+            next(reader, None)  # Skip header
+
+            for row in reader:
+                try:
+                    if len(row) != 5:
+                        raise ValueError("Incorrect number of columns")
+
+                    product_type = row[0].strip().lower()
+                    product_id = row[1].strip()
+                    name = row[2].strip()
+                    price = float(row[3])
+                    stock_quantity = int(row[4])
+
+                    product = ProductFactory.create(
+                        product_type,
+                        product_id,
+                        name,
+                        price,
+                        stock_quantity,
+                        supplier
+                    )
+
+                    inventory.add_product(product)
+                    loaded += 1
+
+                except ValueError as e:
+                    print(f"Skipping row {row}: {e}")
+                    continue
+
+        print(f"{loaded} products loaded.")
+
+    finally:
+        print("Load attempt finished.")
 
 def load_inventory(inventory):
     try:
@@ -63,7 +114,9 @@ def get_positive_float(prompt: str) -> float:
             print("Please enter a valid number, e.g. 12.50")
 
 inventory = Inventory()
-load_inventory(inventory)
+#load_inventory(inventory)
+pepsi = Supplier('S001','PEPSI','pepsi@gmail.com')
+load_products("lab11/products.csv",inventory,pepsi)
 menu = ('---MENU---\n1.Display Product\n2.Add Product\n3.Update Stock\n4.Search Product\n5.Save Inventory\n6.Quit')
 print(menu)
 

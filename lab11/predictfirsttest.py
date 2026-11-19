@@ -6,15 +6,28 @@ from bulkdiscount import BulkDiscount
 from studentdiscount import StudentDiscount
 from productfactory import ProductFactory
 
-order1 = Order('order01',BulkDiscount(200,20))
-product1 = PhysicalProduct('1','p1',2,300,4)
-product2 = DigitalProduct('2','p2',5,500,2)
-Order.add_order_line(order1,product1,0)
-Order.add_order_line(order1,product2,70)
-print(order1.calculate_total())
-Order.set_discount(order1,PercentageDiscount(10))
-print(order1.calculate_total())
-Order.set_discount(order1,StudentDiscount())
-print(order1.calculate_total())
+# order1 = Order('order01',BulkDiscount(200,20))
+# product1 = PhysicalProduct('1','p1',2,300,4)
+# product2 = DigitalProduct('2','p2',5,500,2)
+# Order.add_order_line(order1,product1,0)
+# Order.add_order_line(order1,product2,70)
+# print(order1.calculate_total())
+# Order.set_discount(order1,PercentageDiscount(10))
+# print(order1.calculate_total())
+# Order.set_discount(order1,StudentDiscount())
+# print(order1.calculate_total())
 
 # ProductFactory.create("service","a","ball",4,3)
+
+def get_positive_float(prompt: str) -> float:
+    while True:
+        try:
+            value = float(input(prompt))
+            if value <= 0:
+                print("Please enter a number greater than zero.")
+                continue
+            return value
+        except ValueError:
+            print("Please enter a valid number, e.g. 12.50")
+
+get_positive_float("Enter a number: ")
