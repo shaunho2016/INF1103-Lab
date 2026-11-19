@@ -10,6 +10,11 @@ class Product(ABC):
         self.__stock = stock
         self.__supplier: Supplier = supplier
 
+        if price <= 0:
+            raise ValueError("Price must be greater than zero.")
+        if stock < 0:
+            raise ValueError("Stock quantity cannot be negative.")
+
     def getproductid(self):
         return self.__product_id
 

@@ -51,6 +51,17 @@ def show_product_details(product: Product) -> None:
     product.display_information()
     product.get_fulfilment_info()
 
+def get_positive_float(prompt: str) -> float:
+    while True:
+        try:
+            value = float(input(prompt))
+            if value <= 0:
+                print("Please enter a number greater than zero.")
+                continue
+            return value
+        except ValueError:
+            print("Please enter a valid number, e.g. 12.50")
+
 inventory = Inventory()
 load_inventory(inventory)
 menu = ('---MENU---\n1.Display Product\n2.Add Product\n3.Update Stock\n4.Search Product\n5.Save Inventory\n6.Quit')
@@ -64,8 +75,8 @@ while True:
     elif input_option == 2:
         addid = input('Enter Product ID: ')
         addname = input('Enter Product Name: ')
-        addprice = input('Enter Price: ')
-        addstock = input('Enter Stock: ')
+        addprice = get_positive_float('Enter Price: ')
+        addstock = input('Enter Stock: ')         
         producttype = input('Enter Digital or Physical: ').lower()
         newitem = ProductFactory.create(producttype,addid,addname,addprice,addstock)
         inventory.add_product(newitem)
