@@ -1,3 +1,51 @@
+commit e618c782a4548ef0621ce39e6c89446d099e9bf9
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Mon Nov 9 18:13:43 2026 +0800
+
+    Created file for LSP test for lab10 predictions
+
+commit bf5afe686db849a3c621ca764a34c67fcbb481c4
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Mon Nov 9 16:49:38 2026 +0800
+
+    Created relevant type hints for functions
+
+commit 339b7e15e196131f7b0703477e1a643c399dd348
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Nov 6 12:05:36 2026 +0800
+
+    Created orderline and order class with composition relationship
+
+commit 3091cfd5a3b130b3f20d6837d34b5306ccb33e8b
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Fri Nov 6 11:20:00 2026 +0800
+
+    Edited inventory class to be aggregation
+
+commit 2ff9cf57c4e7c0ae27603434c3a10d4e02747a3d
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Thu Nov 5 21:28:06 2026 +0800
+
+    Edited digital and physical product to include the supplier information
+
+commit c0377259c3b2145bd34e3fc2a44cfc054e0d8002
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Thu Nov 5 20:20:19 2026 +0800
+
+    Created supplier class
+
+commit a7fd9fd69748817f3d05322e5f60d5af70dd156d
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Mon Nov 2 14:41:11 2026 +0800
+
+    Fixed issue with files not commiting
+
+commit e12216dfbb1fced8fe22f4a0b72609f8170fd1e1
+Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
+Date:   Mon Nov 2 14:37:28 2026 +0800
+
+    seperated classes in auditor into separate files
+
 commit 7fe1f1853832f2d1555a4b1828e4171728fa336c
 Author: Shaun Ho <2603202@sit.singaporetech.edu.sg>
 Date:   Fri Oct 30 21:26:13 2026 +0800
