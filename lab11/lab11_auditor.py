@@ -5,6 +5,7 @@ from inventory import Inventory
 from product import Product
 from orderline import OrderLine
 from order import Order
+from productfactory import ProductFactory
 
 def load_inventory(inventory):
     try:
@@ -66,15 +67,7 @@ while True:
         addprice = input('Enter Price: ')
         addstock = input('Enter Stock: ')
         producttype = input('Enter Digital or Physical: ').lower()
-        if producttype == 'digital':
-            addsize = input('Enter Download Size: ')
-            newitem = DigitalProduct(addid,addname,addprice,addstock,addsize)
-        elif producttype == 'physical':
-            addweight = input('Enter Weight: ')
-            newitem = PhysicalProduct(addid,addname,addprice,addstock,addweight)
-        else:
-            print('Enter Valid Product Type')
-            continue
+        newitem = ProductFactory.create(producttype,addid,addname,addprice,addstock)
         inventory.add_product(newitem)
         print('Product successfully added')
     elif input_option == 3:

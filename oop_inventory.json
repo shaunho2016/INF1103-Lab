@@ -14,5 +14,13 @@
         "stock": "21",
         "Type": "digital",
         "Download Size": "89"
+    },
+    {
+        "product_id": "1003",
+        "name": "MOUSE",
+        "price": "4",
+        "stock": "3",
+        "Type": "physical",
+        "Weight": 3.0
     }
 ]
